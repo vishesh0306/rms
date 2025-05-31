@@ -1,5 +1,10 @@
 package com.abes.rms.dto;
 
-public class ResourceMan {
+@SuppressWarnings("resource")
+public class ResourceMan extends User{
+	
+	public ResourceMan(String id, String pass, String name, String email) {
+		super(id, pass, name, email);
+	}
 
 }
