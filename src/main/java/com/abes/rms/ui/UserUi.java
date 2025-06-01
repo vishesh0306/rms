@@ -15,11 +15,7 @@ public class UserUi {
 	
 	public void entry() {
 		
-		System.out.println("-----------------------------------------------------------------------------------");
-		System.out.println("***********************************WELCOME TO RMS********************************");
-		System.out.println("|  signup-> User Sign Up                 |  signin-> User Sign In                 |");
-		System.out.println("|  menu-> Show menu                      |  home-> Back to Home                   |");
-		System.out.println("***********************************************************************************");
+		mainMenu();
 		
         boolean flag = true;
         while(flag) {
@@ -106,12 +102,8 @@ public class UserUi {
         	}
             
             
-        	else if(choice.equalsIgnoreCase("help")) {
-        		System.out.println("-----------------------------------------------------------------------------------");
-        		System.out.println("***********************************WELCOME TO SRBMS********************************");
-        		System.out.println("|  signup-> User Sign Up                 |  signin-> User Sign In                 |");
-        		System.out.println("|  menu-> Show menu                      |  home-> Back to Home                   |");
-        		System.out.println("***********************************************************************************");
+        	else if(choice.equalsIgnoreCase("menu")) {
+        		mainMenu();
         	}
             
         	else if(choice.equalsIgnoreCase("home")) {
@@ -123,10 +115,6 @@ public class UserUi {
         		System.out.println("Wrong choice");
         	}
         	
-        	System.out.println("-----------------------------------------------------------------------------------");
-            System.out.print("Do you want to continue(y/n)? ");
-            String choice2 = sc.nextLine();
-            if(choice2.equalsIgnoreCase("n")) flag = false;
         }
 		
 		
@@ -397,7 +385,7 @@ public class UserUi {
             	else if(choice.equalsIgnoreCase("signout")) {
             		entry();
             	}
-            	else if(choice.equalsIgnoreCase("help")) {
+            	else if(choice.equalsIgnoreCase("menu")) {
             		printMenu();
             	}
             	else {
@@ -405,10 +393,6 @@ public class UserUi {
             		System.out.println("Wrong choice");
             	}
             		
-            	System.out.println("-----------------------------------------------------------------------------------");
-                System.out.print("Do you want to continue(y/n)? ");
-                String choice2 = sc.nextLine();
-                if(choice2.equals("n")) flag = false; 
             } catch(Exception e) {
             	System.out.println(e.getMessage());
             	System.out.println("-----------------------------------------------------------------------------------");
@@ -416,6 +400,15 @@ public class UserUi {
             }
         }
 	}
+	
+	private static void mainMenu() {
+		System.out.println("-----------------------------------------------------------------------------------");
+		System.out.println("***********************************WELCOME TO RMS********************************");
+		System.out.println("|  signup-> User Sign Up                 |  signin-> User Sign In                 |");
+		System.out.println("|  menu-> Show menu                      |  home-> Back to Home                   |");
+		System.out.println("***********************************************************************************");
+	}
+	
 	private static void printMenu() {
 		System.out.println("-----------------------------------------------------------------------------------");
 		System.out.println("*********************************WELCOME USER**************************************");

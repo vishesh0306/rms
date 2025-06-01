@@ -7,19 +7,14 @@ public class App
 {
     @SuppressWarnings("resource")
 	public static void main( String[] args ) {
+    	printMenu();
     	
-    	System.out.println("-----------------------------------------------------------------------------------");
-		System.out.println("************************************WELCOME TO RMS*******************************");
-		System.out.println("|                              You want to Continue as:                           |");
-		System.out.println("|  customer-> Customer      |  manager-> Manager      | admin-> Admin             |");
-		System.out.println("|  help-> Show List         |  quit-> Quit            |                           |");
-		System.out.println("-----------------------------------------------------------------------------------");
-		
 		UserUi user = new UserUi();
 		ManagerUi manager = new ManagerUi();
 		AdminUi admin = new AdminUi();
 		
 		Scanner sc = new Scanner(System.in);
+		
         boolean flag = true;
         while(flag) {
         	System.out.println("-----------------------------------------------------------------------------------");
@@ -36,12 +31,8 @@ public class App
             else if(choice.equalsIgnoreCase("admin")) {
             	admin.entry();
             }
-            else if(choice.equalsIgnoreCase("help")) {
-            	System.out.println("-----------------------------------------------------------------------------------");
-            	System.out.println("|                              You want to Continue as:                           |");
-        		System.out.println("|  customer-> Customer      |  manager-> Manager      | admin-> Admin             |");
-        		System.out.println("|  help-> Show List         |  quit-> Quit            |                           |");
-        		System.out.println("-----------------------------------------------------------------------------------");
+            else if(choice.equalsIgnoreCase("menu")) {
+            	printMenu();
             }
             else if(choice.equalsIgnoreCase("quit")) {
             	System.out.println("-----------------------------------------------------------------------------------");
@@ -53,11 +44,14 @@ public class App
             	System.out.println("-----------------------------------------------------------------------------------");
         		System.out.println("Wrong choice");
             }
-            System.out.println("-----------------------------------------------------------------------------------");
-            System.out.print("Do you want to continue(y/n)? ");
-            String choice2 = sc.next();
-            sc.nextLine();
-            if(choice2.equalsIgnoreCase("n")) flag = false;
         }
+    }
+    
+    private static void printMenu() {
+    	System.out.println("-----------------------------------------------------------------------------------");
+    	System.out.println("|                              You want to Continue as:                           |");
+		System.out.println("|  customer-> Customer      |  manager-> Manager      | admin-> Admin             |");
+		System.out.println("|  menu-> Show Menu         |  quit-> Quit            |                           |");
+		System.out.println("-----------------------------------------------------------------------------------");
     }
 }
