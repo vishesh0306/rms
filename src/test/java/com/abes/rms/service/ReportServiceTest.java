@@ -1,4 +1,4 @@
-package com.abes.rms.services;
+package com.abes.rms.service;
 
 import com.abes.rms.dao.BookingImpDAO;
 import com.abes.rms.dto.Booking;
