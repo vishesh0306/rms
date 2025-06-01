@@ -37,7 +37,7 @@ public class ManagerImpDAO implements ManagerDAO{
 	@Override
 	public boolean isManagerPresent(String userID, String pass) {
 		for(ResourceMan manager : CollectionsUtil.managers) {
-			if(manager.getId().equalsIgnoreCase(userID) && manager.getPass().equalsIgnoreCase(pass)) return true;
+			if(manager.getId().equals(userID) && manager.getPass().equals(pass)) return true;
 		}
 		return false;
 	}

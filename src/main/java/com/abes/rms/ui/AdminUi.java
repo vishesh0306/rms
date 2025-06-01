@@ -10,6 +10,7 @@ import com.abes.rms.util.*;
 public class AdminUi {
 	AdminService adminService = new AdminService();
 	ReportService reportService = new ReportService();
+	
 	Scanner sc = new Scanner(System.in);
 	public void entry() {
 	
@@ -66,7 +67,7 @@ public class AdminUi {
         		System.out.println("-----------------------------------------------------------------------------------");
         		Room temp = reportService.maxBookedRoom();
         		if(temp != null) {
-        			System.out.println("room " + temp.getId() + " is booked " + temp.getCount() + " times.");
+        			System.out.println("Maximum Booked Room: room " + temp.getId() + ", " + temp.getCount() + " times.");
         		} else {
         			System.out.println("no rooms booked yet");
         		}
@@ -75,10 +76,6 @@ public class AdminUi {
         		System.out.println("-----------------------------------------------------------------------------------");
         		System.out.println("Total Revenue: " + reportService.revenue());
         		System.out.println("-----------------------------------------------------------------------------------");
-        	}
-        	else if(choice.equalsIgnoreCase("signout")) {
-        		String[] temp3 = {""};
-            	App.main(temp3);
         	}
         	else if(choice.equalsIgnoreCase("deleteuser")) {
         		System.out.println("-----------------------------------------------------------------------------------");
@@ -163,14 +160,14 @@ public class AdminUi {
         	else if(choice.equalsIgnoreCase("menu")) {
         		printMenu();
         	}
+        	else if(choice.equalsIgnoreCase("signout")) {
+        		String[] temp3 = {""};
+            	App.main(temp3);
+        	}
         	else {
         		System.out.println("-----------------------------------------------------------------------------------");
         		System.out.println("Wrong choice");
         	}
-            System.out.println("-----------------------------------------------------------------------------------");
-            System.out.print("Do you want to continue(y/n)? ");
-            String choice2 = sc.next();
-            if(choice2.equals("n")) flag = false;
         }
 	}
 	
@@ -179,8 +176,8 @@ public class AdminUi {
 		System.out.println("*********************************WELCOME ADMIN*************************************");
 		System.out.println("|  showusers-> Show All Users          |  viewbookings-> View All Bookings        |");
 		System.out.println("|  showrooms-> Show All Rooms          |  reports-> Generate Reports              |");
-		System.out.println("|  signout-> Sign Out                  |  deleteuser-> Deleter User               |");
-		System.out.println("|  menu-> Show Menu                    |  sort-> Sort Bookings                    |");
+		System.out.println("|  sort-> Sort Bookings                |  deleteuser-> Deleter User               |");
+		System.out.println("|  menu-> Show Menu                    |  signout-> Sign Out                      |");
 		System.out.println("***********************************************************************************");
 	}
 	

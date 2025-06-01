@@ -58,7 +58,7 @@ public class Room {
 
 	@Override
 	public String toString() {
-		return "RoomID: " + id + ", Room Type: " + type + ", Cost/hour: " + costPerHour + ", isAvailable: " + isAvailable ;
+		return "RoomID: " + id + ", Room Type: " + type + ", Cost/hour: " + costPerHour;
 	}
 
 	@Override
@@ -68,15 +68,10 @@ public class Room {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Room other = (Room) obj;
-		return Double.doubleToLongBits(costPerHour) == Double.doubleToLongBits(other.costPerHour)
-				&& count == other.count && Objects.equals(id, other.id) && Objects.equals(type, other.type);
+	    if (this == obj) return true;
+	    if (obj == null || getClass() != obj.getClass()) return false;
+	    Room room = (Room) obj;
+	    return Objects.equals(getId(), room.getId()); // compare by ID only
 	}
 	
 }

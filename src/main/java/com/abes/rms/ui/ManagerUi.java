@@ -10,11 +10,7 @@ public class ManagerUi {
 
 	ManagerService manService = new ManagerService();
 	public void entry() {
-		System.out.println("-----------------------------------------------------------------------------------");
-		System.out.println("***********************************WELCOME TO SRBMS********************************");
-		System.out.println("|  signup-> Manager Sign Up              |  signin-> Manager Sign In              |");
-		System.out.println("|  menu-> Show Menu                      |  home-> Back to Home                   |");
-		System.out.println("***********************************************************************************");
+		mainMenu();
 		
 		Scanner sc = new Scanner(System.in);
         boolean flag = true;
@@ -99,12 +95,8 @@ public class ManagerUi {
         			}
         		}
         	}
-        	else if(choice.equalsIgnoreCase("help")) {
-        		System.out.println("-----------------------------------------------------------------------------------");
-        		System.out.println("***********************************WELCOME TO SRBMS********************************");
-        		System.out.println("|  signup-> Manager Sign Up              |  signin-> Manager Sign In              |");
-        		System.out.println("|  menu-> Show Menu                      |  home-> Back to Home                   |");
-        		System.out.println("***********************************************************************************");
+        	else if(choice.equalsIgnoreCase("menu")) {
+        		mainMenu();
         	}
         	else if(choice.equalsIgnoreCase("home")) {
         		String[] args = null;
@@ -114,11 +106,7 @@ public class ManagerUi {
         		System.out.println("-----------------------------------------------------------------------------------");
         		System.out.println("Wrong choice");
         	}
-        	
-        	System.out.println("-----------------------------------------------------------------------------------");
-            System.out.print("Do you want to continue(y/n)? ");
-            String choice2 = sc.nextLine();
-            if(choice2.equalsIgnoreCase("n")) flag = false;
+        	mainMenu();
         }
 		
 		
@@ -234,7 +222,7 @@ public class ManagerUi {
             			System.out.println("No room present.");
             		} else {
             			for(Room room : rooms) {
-            				System.out.println(room);
+            				System.out.println(room + "isAvailable: " + room.isAvailable());
             			}
             		}
             	}
@@ -261,7 +249,7 @@ public class ManagerUi {
             	else if(choice.equals("signout")) {
             		entry();
             	}
-            	else if(choice.equalsIgnoreCase("help")) {
+            	else if(choice.equalsIgnoreCase("menu")) {
             		printMenu();
             	}
             	else {
@@ -269,10 +257,6 @@ public class ManagerUi {
             		System.out.println("Wrong choice");
             	}
             	
-            	System.out.println("-----------------------------------------------------------------------------------");
-                System.out.print("Do you want to continue(y/n)? ");
-                String choice2 = sc.nextLine();
-                if(choice2.equalsIgnoreCase("n")) flag = false;
             } catch(Exception e) {
             	System.out.println("-----------------------------------------------------------------------------------");
 				System.out.println("Invalid input. Please enter correct data type.");
@@ -280,7 +264,15 @@ public class ManagerUi {
         }
 	}
 	
-	public static void printMenu() {
+	private static void mainMenu() {
+		System.out.println("-----------------------------------------------------------------------------------");
+		System.out.println("***********************************WELCOME TO RMS**********************************");
+		System.out.println("|  signup-> Manager Sign Up              |  signin-> Manager Sign In              |");
+		System.out.println("|  menu-> Show Menu                      |  home-> Back to Home                   |");
+		System.out.println("***********************************************************************************");
+	}
+	
+	private static void printMenu() {
 		System.out.println("-----------------------------------------------------------------------------------");
 		System.out.println("******************************WELCOME RESOURCE MANAGER*****************************");
 		System.out.println("|  addroom-> Add a Room                 |  editroom-> Edit a Room                 |");
