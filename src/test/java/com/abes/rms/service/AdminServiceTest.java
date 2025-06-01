@@ -1,4 +1,4 @@
-package com.abes.rms.servicesTest;
+package com.abes.rms.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
