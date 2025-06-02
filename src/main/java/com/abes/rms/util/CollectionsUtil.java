@@ -1,6 +1,7 @@
 package com.abes.rms.util;
 
-import java.util.*; 
+import java.util.*;
+
 import com.abes.rms.dto.*;
 
 public class CollectionsUtil {
@@ -21,13 +22,12 @@ public class CollectionsUtil {
 		rooms.add(new Room("102", "Non-AC", 700));
 		rooms.add(new Room("103", "Non-AC", 700));
 		rooms.add(new Room("201", "AC", 1000));
-		rooms.add(new Room("302", "Non-AC", 700));
-		rooms.add(new Room("202", "AC", 1000));	
+		rooms.add(new Room("202", "Non-AC", 700));
 		
 		users.add(new RegularUser("dev", "Dev1", "Devansh", "devanshdmp15@gmail.com"));
 		
 		managers.add(new ResourceMan("tush", "Tush1", "Tushar", "tushar@gmail.com"));
 		
 	}
+	
 }
-
