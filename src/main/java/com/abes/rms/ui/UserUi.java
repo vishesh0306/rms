@@ -40,7 +40,7 @@ public class UserUi {
         		
         		String email;
         		while(true) {
-        			System.out.print("Enter valid email of user(optional): ");
+        			System.out.print("Enter valid email of user: ");
         			email = sc.nextLine();
         			if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
         				System.out.println("-----------------------------------------------------------------------------------");
